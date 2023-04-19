@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Shadow | Northboat</title>
+		<link rel="shortcut icon" href="static/images/logo.ico">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- 设置安全策略，屏蔽警告 -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline';">
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+		<script src="static/assets/js/jquery.min.js"></script>
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+				<header id="header">
+					<div style="text-align: left; background-color: black; position: relative; opacity: 0.7; padding: 40px; border-radius: 21px">
+						<h2 class="major">
+							<strong>Shadow</strong>
+						</h2>
+
+						<blockquote>
+							You can run this program with a little bit magic to use ChatGPT3.5<br><br>
+							And click <a href="#northboat-en">here</a> to view all my products
+						</blockquote>
+
+						<div id="message" style="word-wrap:break-word; white-space:normal;"></div><br>
+
+						<section>
+							<div class="fields">
+								<div class="field">
+									<label for="text">Communicate</label>
+									<textarea id="text" placeholder="Enter your message" rows="4"></textarea>
+								</div>
+							</div><br>
+							<ul class="actions">
+								<li><button id="send" class="primary">Send</button></li>
+								<li>
+									<select id="timeout">
+										<option value="7">Set Timeout 7 Seconds</option>
+										<option value="4">Set Timeout 4 Seconds</option>
+										<option value="9">Set Timeout 9 Seconds</option>
+										<option value="12">Set Timeout 12 Seconds</option>
+										<option value="44">Set Timeout 44 Seconds</option>
+									</select>
+								</li>
+							</ul>
+						</section>
+					</div>
+				</header>
+
+
+				<div id="main">
+					<article id="northboat-en">
+						<h2 class="major">
+							<strong>northboat</strong>
+						</h2>
+						<p>If you wanna know how this project run(which is quite easy), please view my
+							<a href="https://github.com/northboat">GitHub</a>,
+							here is a github repo <a href="https://northdoor.netlify.app">Index</a>
+							for you to read easier and more.</p>
+						<p>If you wanna read about my study notes from my collage life, please check this
+							<a href="https://northboat.netlify.app">Docs</a>,
+							which is quite long and shit.
+						</p>
+						<p>If you wanna know me more, i mean the person myself, read this
+							<a href="https://northpolar.netlify.app/about">About</a>
+							is a good idea.
+						</p>
+
+						<p>Or maybe you wanna enjoy some
+							<a href="https://northpolar.netlify.app/music">Music</a>.
+						</p>
+
+						<p>
+							Whatever, have a good day my friend!
+						</p>
+						
+					</article>
+				</div>
+
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Designed by northboat</p><br>
+				</footer>
+
+			</div>
+
+			<!-- BG -->
+			<img id="bg" style="opacity: 0.7;" src="static/images/wrap.jpg" alt="#">
+
+			<!-- Scripts -->
+			<script src="static/assets/js/jquery.min.js"></script>
+			<script src="static/assets/js/browser.min.js"></script>
+			<script src="static/assets/js/breakpoints.min.js"></script>
+			<script src="static/assets/js/util.js"></script>
+			<script src="static/assets/js/main.js"></script>
+			<script src="./renderer.js"></script>
+
+			<script>
+				//将消息显示在网页上
+				function setMessageInnerHTML(name, msg) {
+					document.getElementById("message").innerHTML += "<strong>" + name + ":</strong><br>"
+					document.getElementById('message').innerHTML += msg + '<br><br>';
+				}
+			</script>
+	</body>
+</html>
