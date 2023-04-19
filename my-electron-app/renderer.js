@@ -9,7 +9,7 @@ const func = async () => {
 func()
 
 const render_send = async () => {
-  const data = { name: 'John', age: 30 };
+  const data = { text: 'hello' };
   const jsonData = JSON.stringify(data);
   const response = await window.versions.send(jsonData)
   alert(response)

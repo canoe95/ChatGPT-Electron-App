@@ -20,10 +20,32 @@ const createWindow = () => {
   })
 
   ipcMain.handle('ping', () => 'pong')
-  // 主进程
+
+  const request_chatgpt = (jsonData) => {
+    back = ''
+    const { net } = require('electron')
+    const request = net.request({
+      headers: { 'Content-Type': 'application/json', },
+      method: 'POST',
+      url: 'http://127.0.0.1:5000/chat'
+    })
+    request.write(jsonData)
+    request.on('response', response => {
+      response.on('data', res => {
+        console.log(res.toString())
+        back = res.toString()
+      })
+      response.on('end', () => {
+        console.log('No more data in response.')
+      })
+    })
+    request.end()
+    return back
+  }
+
   ipcMain.handle('send', async (event, jsonData) => {
-    // const result = await doSomeWork(jsonData)
-    return jsonData
+    const result = await request_chatgpt(jsonData)
+    return result
   })
 
   // 加载 index.html
