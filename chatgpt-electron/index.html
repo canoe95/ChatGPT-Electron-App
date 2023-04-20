@@ -29,7 +29,7 @@
 							And click <a href="#northboat-en">here</a> to view all my products
 						</blockquote>
 
-						<div id="message" style="word-wrap:break-word; white-space:normal;"></div><br>
+						<div id="message" style="width:520px; word-wrap:break-word; white-space:normal;"></div><br>
 
 						<section>
 							<div class="fields">
@@ -40,15 +40,7 @@
 							</div><br>
 							<ul class="actions">
 								<li><button id="send" class="primary">Send</button></li>
-								<li>
-									<select id="timeout">
-										<option value="7">Set Timeout 7 Seconds</option>
-										<option value="4">Set Timeout 4 Seconds</option>
-										<option value="9">Set Timeout 9 Seconds</option>
-										<option value="12">Set Timeout 12 Seconds</option>
-										<option value="44">Set Timeout 44 Seconds</option>
-									</select>
-								</li>
+								<li><button onclick="cls()">Clear</button></li>
 							</ul>
 						</section>
 					</div>
@@ -102,12 +94,9 @@
 			<script src="static/assets/js/util.js"></script>
 			<script src="static/assets/js/main.js"></script>
 			<script src="./renderer.js"></script>
-
 			<script>
-				//将消息显示在网页上
-				function setMessageInnerHTML(name, msg) {
-					document.getElementById("message").innerHTML += "<strong>" + name + ":</strong><br>"
-					document.getElementById('message').innerHTML += msg + '<br><br>';
+				function cls(){
+					document.getElementById("message").innerHTML = ""
 				}
 			</script>
 	</body>

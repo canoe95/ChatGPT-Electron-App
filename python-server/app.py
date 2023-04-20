@@ -4,7 +4,7 @@ import openai
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app, supports_credentials=True)  # 设置全体跨域
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 @app.route('/')
@@ -15,19 +15,22 @@ def index():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    ask = request.json.get('text')
-    print(ask)
-    response = openai.Completion.create(
-        engine="davinci",
-        prompt=ask,
-        max_tokens=2048,
-        n=1,
-        stop=None,
-        temperature=0.7,
+    text = request.json.get('text')
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": text}]
     )
-    message = response.choices[0].text
-    print(message)
-    return message
+    # print(response)
+    answer = response.choices[0].message['content']
+    print(text)
+    print(answer)
+    # print(message)
+    return answer
+
+
+@app.route('/get', methods=['GET'])
+def get():
+    return f'got'
 
 
 @app.route('/cross')

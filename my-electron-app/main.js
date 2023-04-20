@@ -22,7 +22,6 @@ const createWindow = () => {
   ipcMain.handle('ping', () => 'pong')
 
   const request_chatgpt = (jsonData) => {
-    back = ''
     const { net } = require('electron')
     const request = net.request({
       headers: { 'Content-Type': 'application/json', },
@@ -33,18 +32,16 @@ const createWindow = () => {
     request.on('response', response => {
       response.on('data', res => {
         console.log(res.toString())
-        back = res.toString()
       })
       response.on('end', () => {
         console.log('No more data in response.')
       })
     })
     request.end()
-    return back
   }
 
   ipcMain.handle('send', async (event, jsonData) => {
-    const result = await request_chatgpt(jsonData)
+    const result = request_chatgpt(jsonData)
     return result
   })
 
