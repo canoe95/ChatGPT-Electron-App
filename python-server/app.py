@@ -4,7 +4,7 @@ import openai
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app, supports_credentials=True)  # 设置全体跨域
-openai.api_key = "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"
+openai.api_key = "OPENAI-KEY"
 
 
 @app.route('/')
