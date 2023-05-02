@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, json
 from flask_cors import *
 import openai
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app, supports_credentials=True)  # 设置全体跨域
-openai.api_key = "OPENAI-KEY"
+openai.api_key = "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"
 
 
 @app.route('/')
@@ -16,13 +16,13 @@ def index():
 @app.route('/chat', methods=['POST'])
 def chat():
     text = request.json.get('text')
+    print(text)
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": text}]
     )
     # print(response)
     answer = response.choices[0].message['content']
-    print(text)
     print(answer)
     # print(message)
     return answer
